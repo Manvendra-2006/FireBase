@@ -6,6 +6,7 @@ const App = () => {
   console.log(firebase.signup)
   console.log(firebase.login)
   console.log(firebase.signupwithGoogle)
+  console.log(firebase.signupwithGithub)
    const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const signup = (e) =>{
@@ -15,6 +16,11 @@ const App = () => {
   const signupwithgoogle= ()=>{
      firebase.signupwithGoogle()
      .then((res)=>console.log("Sign in successfully",res))
+     .catch((err)=>console.log("Error",err))
+  }
+  const signupwithgithub= () =>{
+    firebase.signupwithGithub()
+    .then((res)=>console.log("Sign in successfully",res))
      .catch((err)=>console.log("Error",err))
   }
   return (
@@ -43,6 +49,7 @@ const App = () => {
 
         <button onClick={signup}>Signup</button>
         <button type='button' onClick={signupwithgoogle}>Sign UP with Google</button>
+        <button type="button" onClick={signupwithgithub}>Sign up with github</button>
       </form>
     </div>
   )
