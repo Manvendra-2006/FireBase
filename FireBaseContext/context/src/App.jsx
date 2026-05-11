@@ -4,6 +4,7 @@ import { useState } from 'react'
 const App = () => {
   const firebase = useAuth()
   console.log(firebase.signup)
+  console.log(firebase.login)
    const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const handleSignup = (e) =>{
