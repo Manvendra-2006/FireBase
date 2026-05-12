@@ -70,7 +70,7 @@ const FireBaseProvider = ({ children }) => {
     const data = await getDoc(res)
     const answer = data.data()
     return answer
-  }
+  };
   
   return (
     <FireBaseContext.Provider value={{ signup, login, signupwithgoogle, signupwithgithub, signout, writedata, writeBookData, getBookData , getSpecificData }}  >

@@ -49,9 +49,7 @@ const Home = ({ data }) => {
                     Welcome {data?.displayName || "User"}
                 </h1>
 
-                <button onClick={signout} style={styles.logoutBtn}>
-                    Logout
-                </button>
+               
             </div>
 
             <div style={styles.grid}>

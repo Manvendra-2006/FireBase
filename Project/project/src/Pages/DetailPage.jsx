@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAuth } from '../FireBase/FireBaseProvider'
-
+import { Link } from 'react-router-dom'
 const DetailPage = ({data}) => {
     const {id} = useParams()
     console.log(id)
@@ -30,6 +30,7 @@ const DetailPage = ({data}) => {
        <img src={bookData?.pic} alt="" />
         <h1>{bookData?.price}</h1>
         <h1>{bookData?.isbnNumber}</h1>
+        <Link to={`/book/detail/update/${id}`}>Update Data</Link>
     </div>
   )
 }

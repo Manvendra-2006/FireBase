@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AddListing from './Pages/AddList'
 import Navbar from './components/Navbar'
 import DetailPage from './Pages/DetailPage'
+import Update from './Pages/Update'
 
 const App = () => {
   const [user, setuser] = useState(null)
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
             <Route path="/book/add" element={<AddListing data={user} />} />
             <Route path='/book/detail/:id' element={<DetailPage data={user}/>}/>
+            <Route path="/book/detail/update/:id" element={<Update data={user}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
