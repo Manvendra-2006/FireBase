@@ -1,36 +1,22 @@
 import React, { useEffect } from 'react'
-import { messaging } from './Firebase/Firebase'
-import { getToken } from "firebase/messaging"
+import { getMessaging, getToken } from "firebase/messaging";
+import { messaging } from './Firebase/Firebase';
 
 const App = () => {
-
-async function requestPermission() {
-  const permission = await Notification.requestPermission();
-
-  if (permission === "granted") {
-
-    // ✅ Pehle service worker register karo
-    const registration = await navigator.serviceWorker.register(
-      "/firebase-messaging-sw.js"
-    );
-
-    // ✅ Phir token lo, registration pass karo
-    const token = await getToken(messaging, {
-  vapidKey: "BChu79FtY1O_PgHeiCDrE8A5jVKPbLfROohdkKhPy_y5umito8QYmgo1DA429THpPgTQJqojJdlapMYwQAkO-UY",
-  serviceWorkerRegistration: registration,
-});
-
-    console.log("Token:", token);
-
-  } else if (permission === "denied") {
-    alert("You denied notifications");
+  async function requestPermission(){
+    const permission = await Notification.requestPermission()
+    if(permission==="granted"){
+      // generate token
+      const token = await getToken(messaging,{vapidKey:'BJ6zn9SGja4ixpwf6ssAZKfpzG0JmED-hC92o020n1ZlX0TH4Fl-0p8bzfAgM3wamXy0jQoQBiHf1rAiMAS5QPA'})
+      console.log("Token is generated",token)
+    }
+    else if(permission==="denied"){
+      alert("You denied for notifcation")
+    }
   }
-}
-
-  useEffect(() => {
+  useEffect(()=>{
     requestPermission()
-  }, [])
-
+    },[])
   return (
     <div>
 
