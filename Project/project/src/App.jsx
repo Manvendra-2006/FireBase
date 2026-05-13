@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import SignUp from './Pages/Signup'
+import SignUp from './Pages/SignUp'
 import Login from './Pages/Login'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './FireBase/FireBaseProvider'
