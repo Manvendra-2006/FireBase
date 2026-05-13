@@ -71,3 +71,5 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MINI_PROJECT_7ECFD }}
           projectId: mini-project-7ecfd
           entryPoint: Project/project
+          channelId: live
+           
